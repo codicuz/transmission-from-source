@@ -32,7 +32,7 @@ COPY --from=builder /opt/transmission.tar.gz /opt/transmission.tar.gz
 
 RUN tar -C /opt -xvzf /opt/transmission.tar.gz
 
-EXPOSE 3371
+EXPOSE 9091
 
 HEALTHCHECK --interval=60s --timeout=15s \
  CMD ss -lntp | grep 9091 > /dev/null; if [ 0 != $? ]; then exit 1; fi;
