@@ -38,5 +38,3 @@ HEALTHCHECK --interval=60s --timeout=15s \
  CMD ss -lntp | grep 9091 > /dev/null; if [ 0 != $? ]; then exit 1; fi;
 
 ENTRYPOINT ["/opt/transmission/start.sh"]
-
-CMD /bin/bash
